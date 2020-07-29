@@ -1,0 +1,236 @@
+.log {
+  background: rgb(86, 69, 235);
+  background-image: linear-gradient(135deg, #000 30%, rgb(127, 201, 230) 45%, rgb(106, 97, 236) 90%);
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  right: 5%;
+  bottom: 5%;
+  width: 90%;
+  transform: translate(0,0) scale(1);
+  opacity: 1;
+  border: none;
+  border-radius: 10px;
+  box-shadow: 4px 5px 10px rgb(103, 125, 250),
+                -4px -5px 10px rgb(103, 125, 250);
+  border-radius: 12px;
+  z-index: 9;
+  width: 80%;
+  max-width: 85%;
+  transition: 1.5s;
+  pointer-events: auto;
+  outline: none;
+  margin: auto;
+}
+
+.log::before {
+  position: absolute;
+  background: rgb(241, 241, 248);
+  z-index: 3;
+  right: 49%;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  content: "";
+}
+
+.registerSlots {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-auto-rows: 1fr;
+  ;
+  grid-gap: 0;
+  font-family: arial, sans-serif;
+  z-index: 3;
+  margin: auto 20%;
+  border-radius: 3px;
+  box-shadow: 4px 8px 10px rgb(146, 228, 243),
+                -4px -8px 10px rgb(129, 201, 230);
+}
+
+.onee {
+  position: absolute;
+  height: 60vh;
+  width: 100vh;
+  top: 20%;
+  margin: auto 20%;
+}
+
+.twooo {
+  border: 3px solid transparent;
+}
+
+.registerSlots .log-in-slot, .registerSlots .sign-up-slot {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: ;
+  /* background-color: rgb(139, 139, 214); */
+  align-items: left;
+  z-index: 3;
+  margin: ;
+  text-align: left;
+  align-content: space-between;
+  justify-content: ;
+}
+
+.registerSlots .log-in-slot {
+  font-size: 180%;
+  padding: 10%;
+}
+
+.registerSlots .sign-up-slot {
+  font-size: 100%;
+  margin: 0 0 auto 10%;
+  /* z-index: 5; */
+}
+
+.registerSlots .log-in-slot .header, .registerSlots .sign-up-slot .header {
+  margin: 1% 5%;
+}
+
+.registerSlots .sign-up-slot .header h4 {
+  display: flex;
+  justify-content: space-around;
+  align-items: ;
+  padding: 16px 18px 16px 0;
+  width: 75%;
+}
+
+.registerSlots .log-in-slot .header h4 a, .registerSlots .sign-up-slot .header h4 a {
+  padding: 16px 14px;
+  width: 45%;
+  text-decoration: none;
+  font-size: 30px;
+  font-weight: 500;
+  color: rgb(13, 0, 128);
+  border-radius: 3px;
+}
+
+.registerSlots .log-in-slot .header h4 .purple, .registerSlots .sign-up-slot .header h4 .purple {
+  border-bottom: 4px solid rgb(11, 77, 175);
+  padding: 0;
+}
+
+.registerSlots .log-in-slot .header .black, .registerSlots .sign-up-slot .header h4 .black {
+  border-bottom: 2px solid black;
+  padding: 0;
+}
+
+.registerSlots .sign-up-slot form {
+  margin: 0 10%;
+}
+
+.log-in-slot input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: inherit;
+  margin: 20px 20px 20px;
+  outline: none;
+  padding: 8px 14px;
+  display: block;
+  width: 100%;
+}
+
+.sign-up-slot input {
+  border: none;
+  border-bottom: 2px solid black;
+  background-color: inherit;
+  outline: none;
+  margin: 10px 0 10px;
+  font-size: 0.95rem;
+  width: 80%;
+  padding: 16px 0;
+}
+
+.sign-up-slot label {
+  border: none;
+  /* background-color: rgb(123, 123, 204); */
+  outline: none;
+  margin: 0%;
+  font-size: 0.8rem;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.sign-up-slot form .b {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.sign-up-slot form .b input {
+  flex: 1;
+  justify-content: flex-start;
+  margin: auto 0 0 0;
+}
+
+.sign-up-slot form .b label {
+  flex: 2;
+  justify-content: flex-start;
+  margin: auto 0 0 0;
+  padding: 0;
+}
+
+.sign-up-slot form .b a {
+  flex: 9;
+  justify-content: flex-end;
+  margin: auto 0 auto auto;
+  padding: 0;
+  font-size: 80%;
+}
+
+.log-in-slot button {
+  background-image: linear-gradient(to right, rgb(53, 0, 139), black);
+  z-index: 3;
+  padding: 16px 14px;
+  width: 100%;
+  color: white;
+  box-shadow: 4px 5px 10px rgb(77, 75, 172);
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin: auto 2%;
+  cursor: pointer;
+  outline: none;
+}
+.log-in-slot button:hover {
+  background-color: aqua;
+  color: black;
+}
+
+.sign-up-slot button {
+  background-image: linear-gradient(to right, rgb(42, 73, 158), black);
+  z-index: 3;
+  padding: 16px 14px;
+  width: 40%;
+  color: white;
+  box-shadow: 4px 5px 10px rgb(79, 68, 179);
+  text-transform: uppercase;
+  border-radius: 2px;
+  margin: 2% 10%;
+  cursor: pointer;
+  outline: none;
+}
+
+.registerSlots .image {
+  background: purple;
+  background-image: url(purple3.jpg);
+  background-repeat: repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: local;
+  z-index: 3;
+  margin: 0;
+  border: 6px solid black;
+  border-left: 6px solid transparent;
+  box-shadow: 4px 5px 10px rgb(55, 0, 255);
+}
+
+.radaa {
+  font-size: 500%;
+  margin: 0;
+  padding: none;
+  font-weight: 900;
+  font-family: cursive;
+  padding-bottom: 2%;
+}
