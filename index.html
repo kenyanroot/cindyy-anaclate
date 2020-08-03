@@ -1,15 +1,17 @@
+{% load static  %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
   <meta charset="utf-8">
   <title>Landing Page</title>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="signuplogin.css">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <script src="https://use.fontawesome.com/fa77bb4dea.js"></script>
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  <link rel="stylesheet" href="{% static 'signuplogin.css' %}">
+  <link rel="stylesheet" href="{% static 'path/to/font-awesome/css/font-awesome.min.css' %}">
+  <script src="{% static 'https://use.fontawesome.com/fa77bb4dea.js' %}"></script>
   <meta name="viewport" content="width=device-width,initial scale=1.0">
-  <script defer src="main.js"></script>
+  <script defer src="{% static 'main.js' %}"></script>
 </head>
 
 
@@ -45,10 +47,10 @@
 
   <section class="four">
     <div class="right-side">
-      <img class="mainsvg" src="teampic.svg" alt="" width="700px" style="z-index:1;">
+      <img class="mainsvg" src="{% static 'teampic.svg' %}" alt="" width="700px" style="z-index:1;">
     </div>
   </section>
-  <a href="https://icons8.com/icon/14307/lock"></a>
+  <a href="{% static 'https://icons8.com/icon/14307/lock' %}"></a>
 
   <!-- MODAL ART 1 -->
 
@@ -60,34 +62,44 @@
      </div>
      <div class="modal-body">
    <div class=" registerSlots twooo">
-      <section class="sign-up-slot">
+      <div class="sign-up-slot">
         <div class="header">
           <h4>
             <input type="checkbox" id="clicks" style="display:none"/>
             <label class="button" for="clicks">
-              <a class="black button-theme" href="login.html">Login</a>
+              <a class="black button-theme" href="login">Login</a>
             </label>
             <a class="purple" href="#">SignUp</a>
           </h4>
         </div>
-        <form>
+        <form action="register" method="post">
+          {% csrf_token %}
           <label for=""><i class="fa fa-envelope-o"></i>E-mail</label><br>
-          <input type="email" name="" value="" required placeholder="Type Your Email"><br>
+          <input type="email" name="email" value="" required placeholder="Type Your Email"><br>
 
           <label for=""><i class="fa fa-lock" aria-hidden="true"></i>Password</label><br>
-          <input class="radaa" type="password" name="" value="" placeholder=". . . . . . . ." required><br>
+          <input class="radaa" type="password" name="password1" value="" placeholder=". . . . . . . ." required><br>
 
 
           <label for=""><i class="fa fa-lock" aria-hidden="true"></i>Re-type Password</label><br>
-          <input class="radaa" type="password" name="" value="" placeholder=". . . . . . . ."><br>
+          <input class="radaa" type="password" name="password2" value="" placeholder=". . . . . . . ."><br>
 
       <div class="b">
-          <input  type="checkbox" name="" value=""><label for="">Remember Me!</label>
+          <input  type="checkbox" name=" " value=""><label for="">Remember Me!</label>
           <a href="#">Forgot Password?</a>
       </div>
-
-          <button class="purple-button">SIGN UP</button>
+          <button class="purple-button" >SIGN UP</button>
         </form>
+        <!--I AM PRINTING ERROR MESSEGES TO THE PAGE-->
+          {% if messages %}
+            <ul class="messages"
+            {% for message in messages %}
+                <li class="{{ message.tags }}> {{ message }}</li>
+                    {{ message }}
+                </div>
+            {% endfor %}
+           {% endif %}
+
     </section>
 
 
