@@ -1,11 +1,13 @@
+{% load static  %}
+
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
 
 <head>
-  <link rel="stylesheet" href="index.css">
-  <link rel="stylesheet" href="signuplogin.css">
-  <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
-  <meta name="viewport" content="width=device-width,initial scale=1.0">
+  <link rel="stylesheet" href="{% static 'index.css' %}">
+  <link rel="stylesheet" href="{% static 'signuplogin.css' %}">
+  <link rel="stylesheet" href="{% static 'path/to/font-awesome/css/font-awesome.min.css' %}">
+  <meta name="viewport" content="{% static 'width=device-width,initial scale=1.0' %}">
   <meta charset="utf-8">
   <title>Log In</title>
 </head>
@@ -23,11 +25,18 @@
         </h4>
       </div>
 
-      <form class="log-in-form">
-
-        <input type="email" name="" value="" required placeholder="Email"><br>
-        <input type="password" name="" value="" placeholder="Password" required><br>
-
+      <form class="log-in-form" action="login" method="post">
+          {% csrf_token %}
+        <input type="email" name="email" value="" required placeholder="Email"><br>
+        <input type="password" name="password" value="" placeholder="Password" required><br>
+        {% if messages %}
+        <ul class="messages">
+            {% for message in messages %}
+            <li {% if message.tags %}
+                class="{{ message.tags }}" {% endif %} > {{ message }}</li>
+             {% endfor %}
+        </ul>
+        {% endif %}
         <button class="purple-button">LOG IN</button>
 
         </label>
